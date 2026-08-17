@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>家教撮合平台｜产品经理作品集</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#122033;--muted:#607086;--blue:#2457d6;--line:#e6eaf1;--green:#157347}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+.wrap{max-width:1120px;margin:auto;padding:0 24px}.hero{padding:88px 0 56px;background:linear-gradient(180deg,#eef3ff 0,#f5f7fb 100%)}
+.badge{display:inline-block;padding:6px 12px;border:1px solid #cbd8ff;border-radius:999px;color:var(--blue);font-size:13px;background:#fff}
+h1{font-size:52px;line-height:1.15;margin:20px 0 18px;letter-spacing:-1.5px}h2{font-size:30px;margin:0 0 18px}h3{font-size:19px;margin:0 0 8px}
+.lead{max-width:790px;color:var(--muted);font-size:19px}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.pill{background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:10px;font-size:14px}
+section{padding:64px 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 7px 30px rgba(20,45,90,.04)}
+.num{font-size:12px;color:var(--blue);font-weight:700;letter-spacing:1px}.muted{color:var(--muted)}
+.flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.flow span{background:#fff;border:1px solid var(--line);padding:10px 14px;border-radius:12px}.arrow{color:#91a0b6}
+.callout{background:#10264f;color:white;border-radius:24px;padding:36px}.callout p{color:#c9d5ec;margin-bottom:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}.tag{display:inline-block;background:#eef3ff;color:var(--blue);padding:4px 9px;border-radius:7px;font-size:12px;margin-right:6px}
+.footer{padding:44px 0 60px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media(max-width:800px){h1{font-size:38px}.grid,.two{grid-template-columns:1fr}.hero{padding-top:56px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">PM PORTFOLIO · MVP</span>
+    <h1>家教撮合平台</h1>
+    <p class="lead">把微信群、私聊和人工表格中的家教中介流程，转化为可以被系统执行的订单、候选、遴选、权限与退款规则。</p>
+    <div class="meta">
+      <span class="pill">微信小程序</span><span class="pill">FastAPI</span><span class="pill">MySQL</span><span class="pill">Web管理后台</span><span class="pill">AI协作开发</span>
+    </div>
+  </div>
+</header>
+
+<section><div class="wrap">
+  <div class="num">01 / PROBLEM</div><h2>不是“做一个小程序”，而是重构人工撮合流程</h2>
+  <div class="grid">
+    <div class="card"><h3>信息分散</h3><p class="muted">需求、简历、报名和付款存在于微信群、私聊与截图中。</p></div>
+    <div class="card"><h3>状态依赖人工</h3><p class="muted">谁已付款、谁进入候选、谁被选中，需要中介自己记住。</p></div>
+    <div class="card"><h3>权限与售后复杂</h3><p class="muted">联系方式什么时候开放、未入选什么时候退款，都需要明确规则。</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="num">02 / CORE FLOW</div><h2>核心撮合链路</h2>
+  <div class="flow">
+    <span>家长发布需求</span><b class="arrow">→</b><span>管理员审核</span><b class="arrow">→</b><span>教员报名</span><b class="arrow">→</b><span>付款核验</span><b class="arrow">→</b><span>候选池</span><b class="arrow">→</b><span>家长遴选</span><b class="arrow">→</b><span>联系方式解锁 / 退款</span>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="num">03 / PRODUCT DECISIONS</div><h2>三个关键产品决策</h2>
+  <div class="grid">
+    <div class="card"><h3>候选池</h3><p class="muted">付款不是购买联系方式，而是获得候选资格。家长保留最终选择权。</p></div>
+    <div class="card"><h3>延迟解锁联系方式</h3><p class="muted">只有家长完成遴选后，被选中的教员才能查看敏感联系方式。</p></div>
+    <div class="card"><h3>MVP人工付款核验</h3><p class="muted">先验证三方撮合是否成立，再决定是否投入正式支付基础设施。</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="callout">
+    <div class="num" style="color:#8db0ff">SYSTEM THINKING</div>
+    <h2>一个“选择教员”动作，会影响多个业务对象</h2>
+    <p>订单状态、候选关系、入选结果、联系方式权限、未入选退款资格与后台数据需要同时保持一致。项目的核心产品价值，是把这些人工判断转化为系统规则。</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="num">04 / AI COLLABORATION</div><h2>AI是实现协作者，不是产品决策者</h2>
+  <div class="two">
+    <div class="card"><h3>我负责</h3><p><span class="tag">需求分析</span><span class="tag">流程设计</span><span class="tag">状态机</span><span class="tag">信息费规则</span><span class="tag">权限机制</span><span class="tag">MVP取舍</span><span class="tag">测试验收</span></p></div>
+    <div class="card"><h3>AI协助</h3><p><span class="tag">FastAPI</span><span class="tag">SQLAlchemy</span><span class="tag">小程序实现</span><span class="tag">管理后台</span><span class="tag">联调定位</span><span class="tag">Demo脚本</span></p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="num">05 / RESULT</div><h2>从需求到可运行 Demo</h2>
+  <div class="grid">
+    <div class="card"><h3>三角色闭环</h3><p class="muted">家长、教员、管理员均有独立任务与权限。</p></div>
+    <div class="card"><h3>标准Demo场景</h3><p class="muted">一键恢复报名、候选、遴选、退款等典型业务状态。</p></div>
+    <div class="card"><h3>可现场体验</h3><p class="muted">面试官可亲自完成候选比较与教员选择，再观察状态联动。</p></div>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="wrap">
+  家教撮合平台 · Product Manager Portfolio · MVP / Internal Validation
+</div></footer>
+</body></html>
